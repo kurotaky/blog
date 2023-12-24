@@ -1,4 +1,10 @@
 # blog
+## Setup
+
+```
+bundle
+```
+
 ## Deploy
 ### fly.io
 
