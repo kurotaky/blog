@@ -1,4 +1,12 @@
 # blog
+
+## Install
+
+```
+bundle
+bin/rails s
+```
+
 ## Deploy
 ### fly.io
 
