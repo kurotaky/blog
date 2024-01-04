@@ -11,7 +11,7 @@
 
   <div>
     <%= form.label :content %><br>
-    <%= form.text_area :content %>
+    <%= form.rich_text_area :content %>
     <% @post.errors.full_messages_for(:content).each do |message| %>
       <div><%= message %><div>
     <% end %>

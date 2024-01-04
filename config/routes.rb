@@ -9,4 +9,15 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts
+  resource :session, only: [:new, :create, :destroy] do
+    get :logout, on: :collection, action: :destroy
+  end
+
+  resources :users, only: [:new, :create]
+
+  namespace :api do
+    namespace :v1 do
+      resources :users
+    end
+  end
 end
