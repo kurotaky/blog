@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resource :session, only: [:new, :create, :destroy] do
     get :logout, on: :collection, action: :destroy
   end
+  post :signup, to: "users#create"
 
   resources :users, only: [:new, :create]
 
