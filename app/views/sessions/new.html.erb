@@ -1,12 +1,14 @@
 <h1>Ethereum Log-In</h1>
 <p>
   <% if !logged_in? %>
-    <%= form_tag "/login", class: "new_session" do %>
-      <%= text_field_tag :eth_message, "", readonly: true, class: "eth_message" %> <br />
-      <%= text_field_tag :eth_address, "", readonly: true, class: "eth_address" %> <br />
-      <%= text_field_tag :eth_signature, "", readonly: true, class: "eth_signature" %> <br />
-    <% end %>
-    <button class="eth_connect">Log-in with Ethereum</button>
+    <div data-controller="ethereum">
+      <%= button_tag 'Log-in with Ethereum', type: 'button', class: 'eth_connect', data: { action: 'click->ethereum#loginWithEthereum' } %>
+      <%= form_tag '/login', class: 'new_session', data: { ethereum_target: 'newSession' } do %>
+        <%= hidden_field_tag :eth_message, nil, class: 'eth_message', data: { ethereum_target: 'ethMessage' } %>
+        <%= hidden_field_tag :eth_address, nil, class: 'eth_address', data: { ethereum_target: 'ethAddress' } %>
+        <%= hidden_field_tag :eth_signature, nil, class: 'eth_signature', data: { ethereum_target: 'ethSignature' } %>
+      <% end %>
+    </div>
     <br /><br />... or
     <%= link_to "sign up", signup_path %>
     instead? or
