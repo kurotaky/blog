@@ -9,10 +9,13 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :posts
-  resource :session, only: [:new, :create, :destroy] do
-    get :logout, on: :collection, action: :destroy
-  end
-  post :signup, to: "users#create"
+  get "signup", to: "users#new"
+  post "signup", to: "users#create"
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "logout", to: "sessions#destroy"
+  post "logout", to: "sessions#destroy"
+  get "logout", to: "sessions#destroy"
 
   resources :users, only: [:new, :create]
 

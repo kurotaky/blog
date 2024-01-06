@@ -1,0 +1,22 @@
+<h1>Ethereum Log-In</h1>
+<p>
+  <% if !logged_in? %>
+    <%= form_tag "/login", class: "new_session" do %>
+      <%= text_field_tag :eth_message, "", readonly: true, class: "eth_message" %> <br />
+      <%= text_field_tag :eth_address, "", readonly: true, class: "eth_address" %> <br />
+      <%= text_field_tag :eth_signature, "", readonly: true, class: "eth_signature" %> <br />
+    <% end %>
+    <button class="eth_connect">Log-in with Ethereum</button>
+    <br /><br />... or
+    <%= link_to "sign up", signup_path %>
+    instead? or
+    <%= link_to "go back", root_path %>?
+  <% else %>
+    Hello
+    <code><%= current_user.eth_address %></code>!
+    Do you wish to
+    <%= link_to "log out", logout_path, method: :destroy %>
+    or
+    <%= link_to "go back", root_path %>?
+  <% end %>
+</p>
