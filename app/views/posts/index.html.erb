@@ -7,3 +7,7 @@
     </li>
   <% end %>
 </ul>
+
+<% if logged_in? %>
+  <%= link_to "New Post", new_post_path %>
+<% end %>
