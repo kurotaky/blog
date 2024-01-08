@@ -29,7 +29,7 @@ export default class extends Controller {
       } else {
         console.error("Missing target element 'newUser' for 'ethereum' controller");
       }
-    } catch (error) {u
+    } catch (error) {
       console.error("Error requesting accounts:", error);
     }
   }
