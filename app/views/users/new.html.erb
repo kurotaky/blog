@@ -1,9 +1,9 @@
-<div data-controller="ethereum">
-  <%= form_with model: @user, url: signup_path, data: { target: 'ethereum.newUser' } do |form| %>
+<div data-controller="signup-ethereum">
+  <%= form_with model: @user, url: signup_path, data: { target: 'signup-ethereum.newUser' } do |form| %>
     <%= form.label "username" %>
     <%= form.text_field :username %> <br />
     <%= form.label "eth address" %>
-    <%= form.text_field :eth_address, readonly: true, class: "eth_address", data: { ethereum_target: "ethAddress" } %> <br />
+    <%= form.text_field :eth_address, readonly: true, class: "eth_address", data: { target: "signup-ethereum.ethAddress" } %> <br />
   <% end %>
-  <button class="eth_connect" data-action="click->ethereum#connectToWallet">Sign-up with Ethereum</button>
+  <button class="eth_connect" data-action="click->signup-ethereum#connectToWallet">Sign-up with Ethereum</button>
 </div>
