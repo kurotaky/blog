@@ -7,8 +7,7 @@ bundle
 bin/rails s
 ```
 
-## Deploy
-### fly.io
+### fly.io command
 
 #### deploy
 ```
@@ -20,4 +19,10 @@ https://fly.io/docs/rails/getting-started/
 #### status check
 ```
 flyctl status
+```
+
+### rails console
+
+```
+fly ssh console --pty -C "/rails/bin/rails console"
 ```
